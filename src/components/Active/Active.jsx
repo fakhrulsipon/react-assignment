@@ -10,7 +10,7 @@ const Active = ({handleAddToFavorites}) => {
     },[])
     return (
         <div>
-            <thead>
+            <thead className='border-b border-b-2'>
       <tr>
         <td className='text-[#000000] text-[20px]'>Item Image</td>
         <td className='text-[#000000] text-[20px]'>Item Name</td>

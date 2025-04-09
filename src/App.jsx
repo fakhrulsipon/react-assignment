@@ -36,9 +36,9 @@ function App() {
       <div className="banner-container relative">
 
         <div className='relative'>
-          <img className='' src="/public/Banner-min.jpg" alt="" />
+          <img className='h-[773px] w-full' src="/public/Banner-min.jpg" alt="" />
         </div>
-        <div className='absolute top-92 left-18'>
+        <div className='absolute top-80 left-18'>
         <h1 className='font-semibold text-[36px] text-white'>Bid on Unique Items from<br/>Around the World</h1>
         <p className='text-[20px] my-3 text-white'>Discover rare collectibles, luxury goods, and vintage <br /> treasures in our curated auctions</p>
         <button className='py-3 px-4 rounded-3xl font-medium bg-white'>Explore Auctions</button>
@@ -57,7 +57,7 @@ function App() {
       <div className="w-[92%] mx-auto flex gap-4">
 
       
-      <div className="overflow-x-auto w-[70%] bg-[#FFFFFF] rounded-xl">
+      <div className="overflow-x-auto w-[70%] bg-[#FFFFFF] rounded-xl border border-2 mb-10">
   <table className="table">
     
   
@@ -84,7 +84,7 @@ function App() {
                       <div className='flex gap-3 items-center'>
                       <img src={item.image} alt={item.title} className='w-20 h-20 border border-2 rounded-2xl' />
                       <div className='text-start'>
-                      <h2 className='font-medium text-[18px]'>{item.title}</h2>
+                      <h2 className='font-medium'>{item.title}</h2>
                       <div className='flex justify-between'>
                       <p>${item.currentBidPrice}</p>
                       <button onClick={() => handleRemoveFromFavorites(item)}  className='hover:bg-emerald-500 hover:text-white rounded-full'><CiCircleRemove size={25}/></button>
@@ -116,6 +116,26 @@ function App() {
       </div>
        {/* Toast Container to show notifications */}
        <ToastContainer />
+
+       
+       <div className="py-20 text-center">
+        
+        <h2 className='text-[32px] mb-3'>Auction <span className='font-bold text-[#FFD337]'>Gallery</span></h2>
+        <div className='flex gap-3 justify-center items-center mb-3'>
+          <p>Bid.</p>
+          <p>Win.</p>
+          <p>Own.</p>
+        </div>
+        <div className='flex gap-6 justify-center items-center mb-3'>
+          <p>Home</p>
+          <p>Auctions</p>
+          <p>Categories</p>
+          <p>How To Works</p>
+        </div>
+        <p>© 2025 AuctionHub. All rights reserved.</p>
+        
+      </div>
+       
     </>
   );
 }
