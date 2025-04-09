@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Vintage Leica M3 Camera",
+    "description": "A rare vintage clock from the early 1900s. Perfect for collectors.",
+    "currentBidPrice": 150,
+    "timeLeft": "12h 30m",
+    "bidsCount": 5,
+    "image": "https://i.ibb.co/2YpR5jKN/Bid1-min.png"
+  },
+  {
+    "id": 2,
+    "title": "1965 Gibson SG Standard Electric Guitar",
+    "description": "An exquisite antique vase with intricate floral designs, dating back to the 18th century.",
+    "currentBidPrice": 200,
+    "timeLeft": "2d 4h",
+    "bidsCount": 8,
+    "image": "https://i.ibb.co/mVnnSk78/Bid2-min.png"
+  },
+  {
+    "id": 3,
+    "title": "Original Apple Macintosh 128K (1984)",
+    "description": "A rare painting by an unknown artist that captures the essence of 19th-century art.",
+    "currentBidPrice": 3500,
+    "timeLeft": "1d 5h",
+    "bidsCount": 15,
+    "image": "https://i.ibb.co/cSBt8GmV/Bid3-min.png"
+  },
+  {
+    "id": 4,
+    "title": "Rolex Submariner 16610",
+    "description": "A fully restored classic car from the 1950s. A true gem for car enthusiasts.",
+    "currentBidPrice": 15000,
+    "timeLeft": "3d 2h",
+    "bidsCount": 12,
+    "image": "https://i.ibb.co/zTsGVShG/Bid4-min.png"
+  },
+  {
+    "id": 5,
+    "title": "First Edition 'The Great Gatsby' by F. Scott Fitzgerald",
+    "description": "An old guitar with a rich history, ideal for musicians and collectors alike.",
+    "currentBidPrice": 500,
+    "timeLeft": "6h 15m",
+    "bidsCount": 10,
+    "image": "https://i.ibb.co/ccTWdTbq/Bid5-min.png"
+  },
+  {
+    "id": 6,
+    "title": "Mid-Century Modern Eames Lounge Chair",
+    "description": "A luxury antique watch with a unique design and timeless appeal.",
+    "currentBidPrice": 1200,
+    "timeLeft": "4d 10h",
+    "bidsCount": 20,
+    "image": "https://i.ibb.co/XfDFdfxb/Bid6-min.png"
+  }
+]
