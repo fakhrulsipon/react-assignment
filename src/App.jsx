@@ -2,9 +2,12 @@
 import './App.css'
 import Active from './components/Active/Active';
 import { useState } from 'react';
-
+import { CiCircleRemove } from "react-icons/ci";
 import Navbar from './components/Navbar/Navbar'
 import { GiSelfLove } from "react-icons/gi";
+import { ToastContainer, toast } from 'react-toastify'; // Toastify import
+import 'react-toastify/dist/ReactToastify.css'; // Toastify CSS import
+
 
 function App() {
 
@@ -19,6 +22,11 @@ function App() {
     }
   };
   
+  const handleRemoveFromFavorites = (item) => {
+    setFavorites(favorites.filter(fav => fav.title !== item.title)); // Remove item from favorites
+    setTotalBids(prevTotal => prevTotal - parseFloat(item.currentBidPrice)); // Update total bid price
+    toast.success('Item removed from favorites!'); // Show success toast
+  };
   
 
   return (
@@ -73,11 +81,17 @@ function App() {
                 <div>
                   {favorites.map((item, index) => (
                     <div key={index} className='m-5 p-5 border border-2 rounded-2xl'>
-                      <div className='flex gap-3'>
+                      <div className='flex gap-3 items-center'>
                       <img src={item.image} alt={item.title} className='w-20 h-20 border border-2 rounded-2xl' />
-                      <div>
+                      <div className='text-start'>
                       <h2 className='font-medium text-[18px]'>{item.title}</h2>
-                      <p>${item.currentBidPrice}   Bids:{item.timeLeft}</p>
+                      <div className='flex justify-between'>
+                      <p>${item.currentBidPrice}</p>
+                      <button onClick={() => handleRemoveFromFavorites(item)}  className='hover:bg-emerald-500 hover:text-white rounded-full'><CiCircleRemove size={25}/></button>
+                      </div>
+                      
+                      <p>Bids:{item.timeLeft}</p>
+
                       </div>
                       
                       </div>
@@ -100,6 +114,8 @@ function App() {
           </div>
         </div>
       </div>
+       {/* Toast Container to show notifications */}
+       <ToastContainer />
     </>
   );
 }
