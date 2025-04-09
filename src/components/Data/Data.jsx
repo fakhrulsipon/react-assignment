@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
-import { GiSelfLove } from "react-icons/gi";
 
-const Data = ({data}) => {
-    const [isClicked, setIsClicked] = useState(false)
-   const handleClick = () =>{
+import { GiSelfLove } from "react-icons/gi";
+import React, { useState } from 'react';
+const Data = ({data, handleAddToFavorites}) => {
+
+  const [isClicked, setIsClicked] = useState(false);
+ 
+
+ const handleClick = () =>{
+  if(!isClicked){
+    handleAddToFavorites(data)
     setIsClicked(true);
+  }
+  
    }
+  
     
     return (
           <tr>
@@ -14,16 +22,19 @@ const Data = ({data}) => {
         <td className=''>{data.currentBidPrice}</td>
         <td>{data.timeLeft}</td>
         <td><button
-          onClick={()=>handleClick(data)}
-          className={`${
-            isClicked && 'text-red-600 '
-          }${
-            isClicked && 'cursor is not allowed'
-          }`}
-          disabled={isClicked} // Disable the button after click
-        ><GiSelfLove size={22}/></button></td>
+                    onClick={handleClick} 
+                    className={`${
+                        isClicked ? 'text-red-600 cursor-not-allowed' : ''
+                    }`}
+                    disabled={isClicked}
+                    
+                >
+                    <GiSelfLove size={20} />
+                </button></td>
+            
       </tr>
     );
 };
 
 export default Data;
+

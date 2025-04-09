@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Data from '../Data/Data';
 
-const Active = ({handleLove}) => {
+const Active = ({handleAddToFavorites}) => {
     const [bidData, setBidData] = useState([])
     useEffect(()=>{
         fetch('data.json')
@@ -24,7 +24,7 @@ const Active = ({handleLove}) => {
 
     
             {
-                bidData.map(data =><Data key={data.id} data={data} handleLove={handleLove}></Data>)
+                bidData.map(data =><Data key={data.id} data={data} handleAddToFavorites={handleAddToFavorites}></Data>)
             }
             </tbody>
         </div>

@@ -1,15 +1,23 @@
 
 import './App.css'
 import Active from './components/Active/Active';
+import { useState } from 'react';
 
 import Navbar from './components/Navbar/Navbar'
 import { GiSelfLove } from "react-icons/gi";
 
 function App() {
 
-  const handleLove= (data) => {
-    console.log(data)
-  }
+  const [favorites, setFavorites] = useState([]); // To store favorite items
+  const [totalBids, setTotalBids] = useState(0); // To store total bid amount
+
+  const handleAddToFavorites = (item) => {
+    const isItemExist = favorites.some(fav => fav.title === item.title);
+    if (!isItemExist) {
+      setFavorites(prevFavorites => [...prevFavorites, item]);
+      setTotalBids(prevTotal => prevTotal + parseFloat(item.currentBidPrice)); // Update total bid price
+    }
+  };
   
   
 
@@ -45,7 +53,7 @@ function App() {
   <table className="table">
     
   
-    <Active handleLove={handleLove}></Active>
+    <Active handleAddToFavorites={handleAddToFavorites}></Active>
     
     
     
@@ -58,25 +66,35 @@ function App() {
     <GiSelfLove size={22}/>
     <h1 className='font-medium text-[26px]'>Favorite Items</h1>
     </div>
-    <div className='text-center border-b-1 border-b-gray-300 pt-6 pb-6'>
-      <h2 className='font-medium text-[22px]'>No favorites yet</h2>
-      <p>Click the heart icon on any item <br /> to add it to your favorites</p>
-    </div>
+    
+ {/* Display Favorite Items */}
+ <div className='text-center border-b-1 border-b-gray-300 pt-6 pb-6 add-div'>
+              {favorites.length > 0 ? (
+                <div>
+                  {favorites.map((item, index) => (
+                    <div key={index} className='mb-4'>
+                      <img src={item.image} alt={item.title} className='w-10 h-10' />
+                      <h2 className='font-medium text-[18px]'>{item.title}</h2>
+                      
+                      <p>{item.currentBidPrice} - {item.timeLeft}</p>
+                      </div>
+                  ))}
+                </div>
+              ) : (
+                <h2 className='font-medium text-[22px]'>No favorites yet</h2>
+              )}
+            </div>
 
-    <div className='flex justify-between px-4 py-8'>
-      <h1 className='font-bold text-[20px]'>Total bids Amount</h1>
-      <h1 className='font-bold text-[20px]'>0</h1>
-    </div>
-  </div>
-</div>
-
-</div>
-
-
-
-     
+            {/* Total bids amount */}
+            <div className='flex justify-between px-4 py-8'>
+              <h1 className='font-bold text-[20px]'>Total bids Amount</h1>
+              <h1 className='font-bold text-[20px]'>${totalBids.toFixed(2)}</h1> {/* Show total amount with two decimal places */}
+            </div>
+          </div>
+        </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
