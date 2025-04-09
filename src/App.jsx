@@ -1,8 +1,12 @@
 
 import './App.css'
+import Active from './components/Active/Active';
+
 import Navbar from './components/Navbar/Navbar'
+import { GiSelfLove } from "react-icons/gi";
 
 function App() {
+  
   
 
   return (
@@ -21,35 +25,18 @@ function App() {
         </div>
         
       </div>
+      <div className="main-container bg-slate-200 pt-14">
 
-      <div className='w-[92%] mx-auto mt-16 mb-7'>
+      
+
+      <div className='w-[92%] mx-auto mb-7'>
         <h1 className='font-medium text-[32px]'>Active Auctions</h1>
         <p className='text-[20px]'>Discover and bid on extraordinary items</p>
       </div>
 
-      {/* <div className='w-[92%] mx-auto'>
-         <div className='w-[70%]'>
-         <div className='flex justify-between'>
-          <div className='flex gap-20'>
-          <p>Item Image</p>
-          <p>Item Name</p>
-          </div>
-          <div className='flex gap-16'>
-            <p>Current Bid Price</p>
-            <p>Time Left</p>
-            <p>Bid Now</p>
-          </div>
-         </div>
-         </div>
-         <div className='w-[30%]'>
-
-         </div>
-
-      </div> */}
-
-<div className="w-[92%] mx-auto">
-
-  <table className="w-[70%] border-separate border-spacing-4">
+      <div className="w-[92%] mx-auto flex gap-4">
+<div className='w-[70%]'>
+  <table className=" border-separate border-spacing-4 bg-[#FFFFFF] rounded-lg">
     <thead>
       <tr className="text-left">
         <th className="text-[18px] font-medium">Item Image</th>
@@ -59,28 +46,30 @@ function App() {
         <th className="text-[18px] font-medium">Bid Now</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>
-          <img src="/path/to/image.jpg" alt="Item Image" className="w-[50px] h-[50px] object-cover" />
-        </td>
-        <td>First Edition 'The Great Gatsby' by F. Scott Fitzgerald</td>
-        <td>$150</td>
-        <td>12h 30m</td>
-        <td>
-          <button className="py-2 px-4 bg-blue-500 text-white rounded-xl">Bid Now</button>
-        </td>
-      </tr>
-    </tbody>
+    <Active></Active>
+    
   </table>
+</div>
 
-  <div className='w-[30%]'>
-    <div>
-    <h1>Favorite Items</h1>
+<div className='w-[30%] bg-[#FFFFFF] rounded-lg'>
+    <div className='flex items-center gap-1 justify-center border-b-1 border-b-gray-300 pt-4 pb-2'>
+    <GiSelfLove size={22}/>
+    <h1 className='font-medium text-[26px]'>Favorite Items</h1>
+    </div>
+    <div className='text-center border-b-1 border-b-gray-300 pt-6 pb-6'>
+      <h2 className='font-medium text-[22px]'>No favorites yet</h2>
+      <p>Click the heart icon on any item <br /> to add it to your favorites</p>
     </div>
 
+    <div className='flex justify-between px-4 py-8'>
+      <h1 className='font-bold text-[20px]'>Total bids Amount</h1>
+      <h1 className='font-bold text-[20px]'>0</h1>
+    </div>
   </div>
 </div>
+
+</div>
+
      
     </>
   )
