@@ -80,34 +80,3 @@ function App() {
 }
 
 export default App
-
-
-{/* <div className='w-[70%]'>
-  <table className=" border-separate border-spacing-4 bg-[#FFFFFF] rounded-lg">
-    <thead>
-      <tr className="text-left">
-        <th className="text-[18px] font-medium">Item Image</th>
-        <th className="text-[18px] font-medium">Item Name</th>
-        <th className="text-[18px] font-medium">Current Bid Price</th>
-        <th className="text-[18px] font-medium">Time Left</th>
-        <th className="text-[18px] font-medium">Bid Now</th>
-      </tr>
-    </thead>
-    
-    <tbody>
-    <tr>
-    <td>
-        <img src={data.image} alt="Item Image" className="w-[50px] h-[50px] object-cover" />
-     
-        </td>
-        <td> {data.title}</td>
-        <td>{data.currentBidPrice}</td>
-        <td>{data.timeLeft}</td>
-        <td>
-          <button className=""><GiSelfLove size={22}/></button>
-        </td>
-      </tr>
-    </tbody>
-    
-  </table>
-</div> */}
