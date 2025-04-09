@@ -72,11 +72,18 @@ function App() {
               {favorites.length > 0 ? (
                 <div>
                   {favorites.map((item, index) => (
-                    <div key={index} className='mb-4'>
-                      <img src={item.image} alt={item.title} className='w-10 h-10' />
+                    <div key={index} className='m-5 p-5 border border-2 rounded-2xl'>
+                      <div className='flex gap-3'>
+                      <img src={item.image} alt={item.title} className='w-20 h-20 border border-2 rounded-2xl' />
+                      <div>
                       <h2 className='font-medium text-[18px]'>{item.title}</h2>
+                      <p>${item.currentBidPrice}   Bids:{item.timeLeft}</p>
+                      </div>
                       
-                      <p>{item.currentBidPrice} - {item.timeLeft}</p>
+                      </div>
+                      
+                      
+                      
                       </div>
                   ))}
                 </div>
