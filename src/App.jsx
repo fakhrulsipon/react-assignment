@@ -6,6 +6,10 @@ import Navbar from './components/Navbar/Navbar'
 import { GiSelfLove } from "react-icons/gi";
 
 function App() {
+
+  const handleLove= (data) => {
+    console.log(data)
+  }
   
   
 
@@ -35,23 +39,21 @@ function App() {
       </div>
 
       <div className="w-[92%] mx-auto flex gap-4">
-<div className='w-[70%]'>
-  <table className=" border-separate border-spacing-4 bg-[#FFFFFF] rounded-lg">
-    <thead>
-      <tr className="text-left">
-        <th className="text-[18px] font-medium">Item Image</th>
-        <th className="text-[18px] font-medium">Item Name</th>
-        <th className="text-[18px] font-medium">Current Bid Price</th>
-        <th className="text-[18px] font-medium">Time Left</th>
-        <th className="text-[18px] font-medium">Bid Now</th>
-      </tr>
-    </thead>
-    <Active></Active>
+
+      
+      <div className="overflow-x-auto w-[70%] bg-[#FFFFFF] rounded-xl">
+  <table className="table">
+    
+  
+    <Active handleLove={handleLove}></Active>
+    
+    
     
   </table>
 </div>
 
-<div className='w-[30%] bg-[#FFFFFF] rounded-lg'>
+
+<div className='w-[30%] max-h-max bg-[#FFFFFF] rounded-lg'>
     <div className='flex items-center gap-1 justify-center border-b-1 border-b-gray-300 pt-4 pb-2'>
     <GiSelfLove size={22}/>
     <h1 className='font-medium text-[26px]'>Favorite Items</h1>
@@ -70,9 +72,42 @@ function App() {
 
 </div>
 
+
+
      
     </>
   )
 }
 
 export default App
+
+
+{/* <div className='w-[70%]'>
+  <table className=" border-separate border-spacing-4 bg-[#FFFFFF] rounded-lg">
+    <thead>
+      <tr className="text-left">
+        <th className="text-[18px] font-medium">Item Image</th>
+        <th className="text-[18px] font-medium">Item Name</th>
+        <th className="text-[18px] font-medium">Current Bid Price</th>
+        <th className="text-[18px] font-medium">Time Left</th>
+        <th className="text-[18px] font-medium">Bid Now</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+    <tr>
+    <td>
+        <img src={data.image} alt="Item Image" className="w-[50px] h-[50px] object-cover" />
+     
+        </td>
+        <td> {data.title}</td>
+        <td>{data.currentBidPrice}</td>
+        <td>{data.timeLeft}</td>
+        <td>
+          <button className=""><GiSelfLove size={22}/></button>
+        </td>
+      </tr>
+    </tbody>
+    
+  </table>
+</div> */}

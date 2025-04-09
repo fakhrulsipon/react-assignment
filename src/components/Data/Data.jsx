@@ -1,25 +1,17 @@
 import React from 'react';
 import { GiSelfLove } from "react-icons/gi";
 
-const Data = ({data}) => {
-    console.log(data)
+const Data = ({data, handleLove}) => {
+   
+    
     return (
-        <div>
-          <tbody>
-    <tr>
-    <td>
-        <img src={data.image} alt="Item Image" className="w-[50px] h-[50px] object-cover" />
-     
-        </td>
-        <td> {data.title}</td>
-        <td>{data.currentBidPrice}</td>
+          <tr>
+      <td><img className='w-20 h-20' src={data.image} alt="" /></td>
+        <td className=''>{data.title}</td>
+        <td className=''>{data.currentBidPrice}</td>
         <td>{data.timeLeft}</td>
-        <td>
-          <button className=""><GiSelfLove size={22}/></button>
-        </td>
+        <td><button onClick={()=>handleLove(data)}><GiSelfLove size={22}/></button></td>
       </tr>
-    </tbody>
-        </div>
     );
 };
 
