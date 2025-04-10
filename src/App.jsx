@@ -13,10 +13,10 @@ function App() {
 
   const [addfavorites, setAddFavorites] = useState([]); 
   const [totalBids, setTotalBids] = useState(0);
-  
+
   const handleAddFavorites = (item) => {
-    const isItemExist = addfavorites.find(fav => fav.title === item.title);
-    if (!isItemExist) {
+    const newAddFavorites = addfavorites.find(favorite => favorite.title === item.title);
+    if (!newAddFavorites) {
       setAddFavorites([...addfavorites, item]);
       setTotalBids(totalBids + item.currentBidPrice);
     }
@@ -24,7 +24,7 @@ function App() {
   
   const handleRemoveFromFavorites = (item) => {
     
-    const updatedFavorites = addfavorites.filter(fav => fav.title !== item.title);
+    const updatedFavorites = addfavorites.filter(favorite => favorite.title !== item.title);
     setAddFavorites(updatedFavorites);
 
     setTotalBids(totalBids - item.currentBidPrice);
