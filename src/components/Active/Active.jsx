@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Data from '../Data/Data';
 
-const Active = ({handleAddToFavorites}) => {
+const Active = ({handleAddFavorites}) => {
     const [bidData, setBidData] = useState([])
     useEffect(()=>{
         fetch('data.json')
@@ -10,7 +10,7 @@ const Active = ({handleAddToFavorites}) => {
     },[])
     return (
         <div>
-            <thead className='border-b border-b-2'>
+            <thead className='border-b-2 border-b-gray-400'>
       <tr>
         <td className='text-[#000000] text-[20px]'>Item Image</td>
         <td className='text-[#000000] text-[20px]'>Item Name</td>
@@ -24,7 +24,7 @@ const Active = ({handleAddToFavorites}) => {
 
     
             {
-                bidData.map(data =><Data key={data.id} data={data} handleAddToFavorites={handleAddToFavorites}></Data>)
+                bidData.map(data =><Data key={data.id} data={data} handleAddFavorites={handleAddFavorites}></Data>)
             }
             </tbody>
         </div>

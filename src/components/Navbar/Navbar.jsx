@@ -7,7 +7,7 @@ const Navbar = () => {
   <div className="navbar-start">
     <div className="dropdown">
       <div className="">
-        <h2 className='text-[32px]'>Auction <span className='font-bold text-[#FFD337]'>Gallery</span></h2>
+        <h2 className='text-[32px] poppins'>Auction <span className='font-bold text-[#FFD337]'>Gallery</span></h2>
       </div>
       <ul
         tabIndex={0}
@@ -19,10 +19,10 @@ const Navbar = () => {
     </div>
   </div>
   <div className="navbar-center flex gap-6">
-    <p className='font-normal text-[22px] text-[#000000]'>Home</p>
-    <p className='font-normal text-[22px] text-[#000000]'>Auctions</p>
-    <p className='font-normal text-[22px] text-[#000000]'>Categories</p>
-    <p className='font-normal text-[22px] text-[#000000]'>How to works</p>
+    <p className='font-normal text-[22px] text-[#000000] poppins'>Home</p>
+    <p className='font-normal text-[22px] text-[#000000] poppins'>Auctions</p>
+    <p className='font-normal text-[22px] text-[#000000] poppins'>Categories</p>
+    <p className='font-normal text-[22px] text-[#000000] poppins'>How to works</p>
   </div>
   <div className="navbar-end gap-3">
     
