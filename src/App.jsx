@@ -39,7 +39,7 @@ function App() {
       <div className="banner-container relative">
 
         <div className='relative'>
-          <img className='h-[773px] w-full' src="/public/Banner-min.jpg" alt="" />
+          <img className='h-[773px] w-full' src="/Banner-min.jpg" alt="" />
         </div>
         <div className='absolute top-80 left-18'>
         <h1 className='font-semibold text-[42px] text-white'>Bid on Unique Items from<br/>Around the World</h1>
