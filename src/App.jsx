@@ -13,6 +13,7 @@ function App() {
 
   const [addfavorites, setAddFavorites] = useState([]); 
   const [totalBids, setTotalBids] = useState(0);
+  
   const handleAddFavorites = (item) => {
     const isItemExist = addfavorites.find(fav => fav.title === item.title);
     if (!isItemExist) {
@@ -22,9 +23,10 @@ function App() {
   };
   
   const handleRemoveFromFavorites = (item) => {
+    
     const updatedFavorites = addfavorites.filter(fav => fav.title !== item.title);
     setAddFavorites(updatedFavorites);
-  
+
     setTotalBids(totalBids - item.currentBidPrice);
     toast.success('Item removed from favorites!');
   };
@@ -76,7 +78,7 @@ function App() {
     <h1 className='font-medium text-[26px]'>Favorite Items</h1>
     </div>
     
- {/* Display Favorite Items */}
+
  <div className='text-center border-b-2 border-b-gray-400 pt-6 pb-6 add-div'>
               {addfavorites.length > 0 ? (
                 <div>
@@ -109,10 +111,10 @@ function App() {
               )}
             </div>
 
-            {/* Total bids amount */}
+            
             <div className='flex justify-between px-4 py-8'>
               <h1 className='font-bold text-[20px]'>Total bids Amount</h1>
-              <h1 className='font-bold text-[20px]'>${totalBids.toFixed(2)}</h1> {/* Show total amount with two decimal places */}
+              <h1 className='font-bold text-[20px]'>${totalBids.toFixed(2)}</h1>
             </div>
           </div>
         </div>
