@@ -27,12 +27,12 @@ const Data = ({data, handleAddFavorites}) => {
         <td className=''>{data.currentBidPrice}</td>
         <td>{data.timeLeft}</td>
         <td><button
-                    onClick={handleClick} 
-                    className={`${
-                        isClicked ? 'text-red-600 cursor-not-allowed' : ''
-                    }`}
-                    disabled={isClicked}><GiSelfLove size={20} />
-                </button></td>
+  onClick={handleClick}
+  disabled={isClicked}
+  className={isClicked ? 'text-red-600 cursor-not-allowed' : ''}
+>
+  <GiSelfLove size={20} />
+</button></td>
             
       </tr>
       
